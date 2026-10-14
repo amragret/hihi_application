@@ -17,31 +17,40 @@ Le projet web a pour but de découvrir la « HiHi » qui sommeille en nous, grâ
 Fortement inspiré, dans son concept, du site internet de [Harry Potter - Sorting Hat](https://www.harrypotter.com/sorting-hat), permettant de savoir à quelle maison de sorcier on appartient, notre projet se différenciera par le contenu du test et les différentes significations des quatre issues possibles.
 
 ### Comptes
-- Création d'un compte, connexion et déconnexion.
-- Modification de son profil (nom, prénom, e-mail, mot de passe, langue).
-- Deux rôles : utilisateur et administrateur (le rôle administrateur est attribué par l'administration).
+- Création d'un compte, connexion et déconnexion, avec une session maintenue sur toutes les pages. 
+- Mots de passe stockés de façon sécurisée dans la base de données (hachage, jamais en clair). 
+- Modification de son profil : nom, prénom, nom, e-mail, mot de passe et langue. 
+- Deux rôles : utilisateur et administrateur. Le rôle administrateur est attribué par l'administration. 
+- Accès aux pages contrôlé selon la connexion et le rôle.
 
 ### Section "Ma HiHi"
-- Enregistre la poupée reçue après la complétion du questionnaire (son type, son nom, ses spécificités).
+- Enregistre la poupée reçue après la complétion du questionnaire : son type, son nom et ses spécificités. 
+- Page « Ma maison » : fiche de la HiHi attribuée, consultable à tout moment. 
+- Page « Membres de ma maison » : liste des utilisateurs de la même HiHi (nom et date d'arrivée). 
+- Tableau de bord : un appel à passer le test tant qu'aucune HiHi n'est attribuée, puis un résumé de la maison avec son nombre de membres.  
 
 ### Le Test de personnalité (Le Choixpeau version HiHi)
-- Questionnaire interactif et immersif (présentation dynamique des questions avec ambiance visuelle).
-- Algorithme de calcul pondéré basé sur les choix pour déterminer l'affinité avec l'une des quatre « HiHi ».
-- Gestion automatique des ex-aequo (via une logique de pondération ou une question subsidiaire).
+- Questionnaire interactif et immersif : présentation dynamique des questions, avec une ambiance visuelle. 
+- Algorithme de calcul pondéré basé sur les choix, pour déterminer l'affinité avec l'une des quatre « HiHi ». 
+- Gestion automatique des ex-aequo, via une logique de pondération ou une question subsidiaire. 
+- Test unique : un compte ne peut le passer qu'une seule fois. Une fois la HiHi attribuée, l'accès au test est refusé par le serveur, même si l'adresse est saisie à la main. 
+- Cas d'erreur : seul un administrateur peut réinitialiser la HiHi d'un utilisateur. 
 
 ### Résultat et profil « HiHi »
-- Séquence de révélation animée et théâtrale de la « HiHi » attribuée.
-- Fiche descriptive détaillée de la « HiHi » (mythologie de la poupée, traits de caractère, forces, symbolique).
-- Sauvegarde du résultat dans l'espace personnel pour pouvoir le consulter à tout moment.
+- Séquence de révélation animée et théâtrale de la « HiHi » attribuée. 
+- Fiche descriptive détaillée : mythologie de la poupée, traits de caractère, forces et symbolique. 
+- Sauvegarde du résultat dans l'espace personnel, pour pouvoir le consulter à tout moment depuis « Ma maison ». 
 
 ### Partage et communauté
-- Génération d'une carte de profil personnalisée de la « HiHi » obtenue.
-- Fonctionnalité de partage du résultat sur les réseaux sociaux.
+- Génération d'une carte de profil personnalisée de la « HiHi » obtenue. 
+- Partage du résultat sur les réseaux sociaux. 
+- Dimension communautaire : les membres d'une même maison se retrouvent sur la page « Membres de ma maison ». 
 
 ### Administration
-- Gestion des questions, des choix et de la logique de pondération du test de personnalité.
-- Gestion du contenu et des descriptions des quatre « HiHi » de la mythologie.
-- Gestion des comptes utilisateurs et des rôles.
+- Gestion des questions, des choix et de la logique de pondération du test de personnalité. 
+- Gestion du contenu et des descriptions des quatre « HiHi » de la mythologie. 
+- Gestion des comptes utilisateurs et des rôles, y compris la réinitialisation de la HiHi d'un utilisateur. 
+- Statistiques : répartition des membres entre les quatre maisons. 
 
 ### Autres aspects techniques
 - **Multilingue :** interface disponible en français (et adaptable en anglais).
@@ -64,6 +73,6 @@ Page d'accueil
 
 ## Fonctionnalités optionnelles
 
-Si le temps nous le permet, nous aimerions l'investir dans le test de personnalité, car c'est là qu'il y aura la possibilité de déchaîner notre créativité. En plus des questions à choix multiples de base, on pourrait y ajouter des phases de jeux de rôle, avec une narration plus poussée. 
+Si le temps nous le permet, nous aimerions l'investir dans le test de personnalité, car c'est là que se trouve la possibilité de déchaîner notre créativité. En plus des questions à choix multiples de base, nous pourrions y ajouter des phases de jeu de rôles, avec une narration plus poussée. 
 
-Dans le cas où nous serions déjà satisfaits de notre test, nous ajouterions la possibilité de modifier certains aspects de l'apparence de la « HiHi », comme son sac à main ou ses habits.
+Dans le cas où nous serions déjà satisfaits de notre test, nous ajouterions la possibilité de modifier certains aspects de l'apparence de la « HiHi », comme son sac à main ou ses habits. 
