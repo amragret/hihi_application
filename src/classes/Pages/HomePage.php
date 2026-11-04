@@ -4,7 +4,6 @@ namespace Pages;
 
 use Auth\Session;
 
-// Page d'accueil
 class HomePage extends Page {
     public function __construct(Session $session) {
         parent::__construct($session, 'Accueil');
