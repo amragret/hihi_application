@@ -1,3 +1,14 @@
+<?php
+
+require_once __DIR__ . '/../utils/autoloader.php';
+
+use Auth\Session;
+use Pages\RegisterPage;
+
+(new RegisterPage(new Session()))->render();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
