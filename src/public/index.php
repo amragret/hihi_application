@@ -1,4 +1,11 @@
 <?php
+require_once __DIR__ . '/../utils/autoloader.php';
+
+use Auth\Session;
+use Pages\HomePage;
+
+(new HomePage(new Session()))->render();
+
 const DB_HOST = 'mariadb';
 const DB_PORT = 3306;
 const DB_NAME = 'my_database';
