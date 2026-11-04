@@ -34,6 +34,7 @@ abstract class Page {
             $content = $this->renderContent();
         } catch (Throwable $e) {
             error_log((string) $e);
+            echo '<pre>' . $e->getMessage() . '</pre>';
             $this->showError(500, 'Une erreur est survenue. Réessaie dans quelques instants.');
         }
 
