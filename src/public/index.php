@@ -9,7 +9,7 @@ $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";c
 
 $pdo = new PDO($dsn, DB_USER, DB_PASSWORD);
 
-$sql = "SELECT * FROM my_table";
+$sql = "SELECT * FROM hihi";
 
 $stmt = $pdo->prepare($sql);
 
@@ -24,26 +24,90 @@ $results = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProgServ2 Course PHP Template</title>
+    <title>HiHi - Découvrez quelle poupée sommeille en vous</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1>ProgServ2 Course PHP Template</h1>
 
-    <p>Bienvenue dans votre projet PHP pour le cours ProgServ2 à la HEIG-VD !</p>
+    <!-- En-tête / Navigation principale -->
+    <header>
+        <div class="logo">
+            <a href="index.php">LOGO HIHI</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#mythologie">HIHI MYTHOLOGIE</a></li>
+                <li><a href="login.php">CONNEXION</a></li>
+                <li>
+                    <!-- Sélecteur de langue -->
+                    <select name="lang" id="lang-select">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                    </select>
+                </li>
+            </ul>
+            <a href="signup.php" class="btn-primary">CREER MON COMPTE</a>
+        </nav>
+    </header>
 
-    <h2>Résultats de la base de données :</h2>
+    <main>
+        <!-- Section Héro (Bannière principale) -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>QUELLE HIHI SOMMEILLE EN TOI ?</h1>
+                <div class="hero-image-placeholder">
+                    <img src="assets/images/hero-placeholder.jpg" alt="Illustration de la mythologie HiHi">
+                </div>
+                <a href="test.php" class="btn-large">DECOUVRE TA HIHI</a>
+            </div>
+        </section>
 
-    <ul>
-        <?php foreach ($results as $row) { ?>
-            <li>ID: <?= htmlspecialchars($row['id']) ?>
-                <ul>
-                    <li>Column1: <?= htmlspecialchars($row['column1']) ?></li>
-                    <li>Column2: <?= htmlspecialchars($row['column2']) ?></li>
-                </ul>
-            </li>
-        <?php } ?>
-    </ul>
+        <!-- Section des 4 Maisons / Sororités -->
+        <section class="sororities">
+            <h2>QUATRES HIHI, QUATRES SORORITES</h2>
+            <div class="cards-container">
+                <article class="card">
+                    <h3>HIHI 1</h3>
+                </article>
+                <article class="card">
+
+                    <h3>HIHI 2</h3>
+                </article>
+                <article class="card">
+
+                    <h3>HIHI 3</h3>
+                </article>
+                <article class="card">
+                    <h3>HIHI 4</h3>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section Explicative -->
+        <section class="how-it-works">
+            <h2>COMMENT ÇA MARCHE</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>CREE TON COMPTE</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>PASSE LE TEST</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <p>REJOINS TA SORORITE</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projet HiHi - Eva Avila Muñoz & Kevin Grêt</p>
+    </footer>
+
 </body>
 
 </html>
