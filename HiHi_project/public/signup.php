@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if ($e->getCode() === "23000") {
                 $errors[] = "Ce pseudo ou cet e-mail est déjà utilisé.";
             } else {
-                $errors[] = "Erreur lors de l'interaction avec la base de données : " . $e->getMessage();
+                $errors[] = "Une erreur est survenue";
             }
         }
     }
@@ -54,7 +54,7 @@ require 'includes/header.php';
 <?php if (!empty($errors)) { ?>
     <ul class="errors">
         <?php foreach ($errors as $error) { ?>
-            <li><?= $error ?></li>
+            <li><?= htmlspecialchars($error) ?></li>
         <?php } ?>
     </ul>
 <?php } ?>
