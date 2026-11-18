@@ -10,7 +10,6 @@ class UserManager {
         $this->pdo = $database->connect();
     }
 
-    // Ajoute un utilisateur et renvoie son nouvel id
     public function add(User $user): int {
         $sql = "INSERT INTO utilisateur (
             pseudo,
@@ -33,7 +32,6 @@ class UserManager {
         return $this->pdo->lastInsertId();
     }
 
-    // Cherche un utilisateur par son e-mail
     public function findByEmail(string $email): ?User {
         $sql = "SELECT * FROM utilisateur WHERE email = :email";
 
@@ -41,15 +39,12 @@ class UserManager {
         $stmt->bindValue(':email', $email);
         $stmt->execute();
 
-        // Récupère la ligne trouvée, sous forme de tableau
         $data = $stmt->fetch();
 
-        // Si personne n'a cet e-mail, fetch() renvoie false
         if (!$data) {
             return null;
         }
 
-        // On transforme le tableau en objet User
         return new User(
             $data['pseudo'],
             $data['email'],
@@ -60,7 +55,6 @@ class UserManager {
         );
     }
 
-    // Cherche un utilisateur par son id
     public function findById(int $id): ?User {
         $sql = "SELECT * FROM utilisateur WHERE id_utilisateur = :id";
 
@@ -84,7 +78,6 @@ class UserManager {
         );
     }
 
-    // Enregistre la HiHi obtenue au test
     public function saveHihi(int $userId, int $hihiId): void {
         $sql = "UPDATE utilisateur
                 SET id_hihi = :hihi_id, date_attribution = NOW()

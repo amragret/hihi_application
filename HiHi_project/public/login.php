@@ -42,7 +42,7 @@ require 'includes/header.php';
 <?php if (!empty($errors)) { ?>
     <ul class="errors">
         <?php foreach ($errors as $error) { ?>
-            <li><?= $error ?></li>
+            <li><?= htmlspecialchars($error) ?></li>
         <?php } ?>
     </ul>
 <?php } ?>
